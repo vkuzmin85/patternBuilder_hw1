@@ -1,25 +1,25 @@
 public class Main {
     public static void main(String[] args) {
         Person mom = new PersonBuilder()
-                .setName("Анна")
-                .setSurname("Вольф")
+                .setName("РђРЅРЅР°")
+                .setSurname("Р’РѕР»СЊС„")
                 .setAge(31)
-                .setAddress("Сидней")
+                .setAddress("РЎРёРґРЅРµР№")
                 .build();
         Person son = mom.newChildBuilder()
-                .setName("Антошка")
+                .setName("РђРЅС‚РѕС€РєР°")
                 .build();
-        System.out.println("У " + mom + " есть сын, " + son);
+        System.out.println("РЈ " + mom + " РµСЃС‚СЊ СЃС‹РЅ, " + son);
 
         try {
-            // Не хватает обяхательных полей
+            // РќРµ С…РІР°С‚Р°РµС‚ РѕР±СЏС…Р°С‚РµР»СЊРЅС‹С… РїРѕР»РµР№
             new PersonBuilder().build();
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }
 
         try {
-            // Возраст недопустимый
+            // Р’РѕР·СЂР°СЃС‚ РЅРµРґРѕРїСѓСЃС‚РёРјС‹Р№
             new PersonBuilder().setAge(-100).build();
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
